@@ -84,6 +84,7 @@ export const Button = styled.button`
   background-color: #ebd8ff;
   box-shadow: 0px 3.44px 3.44px rgba(0, 0, 0, 0.25);
   border-radius: 10.31px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
   font-size: 18px;
   line-height: 1.22;
@@ -91,7 +92,8 @@ export const Button = styled.button`
   vertical-align: top;
   color: #373737;
   cursor: pointer;
-  &:active {
-    background-color: #5cd3a8;
+  &:hover,
+  &:focus {
+    scale: 1.1;
   }
 `;

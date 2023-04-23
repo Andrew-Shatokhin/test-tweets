@@ -17,20 +17,22 @@ import {
 // "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/68.jpg";
 
 export default function Card({ users }) {
-  const { avatar, followers, tweets, following, id } = users;
-  const [isFollowing, setIsFollowing] = useState(following);
+  const [isFollowing, setIsFollowing] = useState(users.following);
+  const { avatar, followers, tweets} = users;
+
   // console.log(users)
-  const toggleActiveFollow = () => {
+  const toggleActiveFollow = async () => {
     if (!isFollowing) {
       users.followers += 1;
     } else {
        users.followers -= 1;
     }
 
-
+    const followers = users.followers;
+    const id = users.id;
     const updateFollowing = !isFollowing;
 
-    updateUsers(id, updateFollowing, followers).then(
+    await updateUsers(id, updateFollowing, followers).then(
       setIsFollowing(!isFollowing)
     );
   };
