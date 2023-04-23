@@ -20,14 +20,14 @@ axios.defaults.baseURL = 'https://642c84a3bf8cbecdb4f282f8.mockapi.io';
 //   }
 // );
 
-export const fetchUsers = async () => {
-  const response = await axios.get('/users?page=1&limit=3');
-  return response.data;
-}
-//  export const fetchUsers = async page => {
-//    const response = await axios.get(`/users?page=${page}&limit=3`);
-//    return response.data;
-//  };
+// export const fetchUsers = async () => {
+//   const response = await axios.get('/users?page=1&limit=3');
+//   return response.data;
+// }
+ export const fetchUsers = async page => {
+   const response = await axios.get(`/users?page=${page}&limit=3`);
+   return response.data;
+ };
 
 export const updateUsers = async (id, isFollowing, followers) => {
   const response = await axios.put(`/users/${id}`, {
