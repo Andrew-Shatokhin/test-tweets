@@ -7,6 +7,8 @@ import SharedLayout from './SharedLayout/SharedLayout';
 // import { GlobalStyle } from './GlobalStyle';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Tweets = lazy(() => import('../pages/Tweets/Tweets'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+
 
 
 export const App = () => {
@@ -16,6 +18,7 @@ export const App = () => {
         <Route index element={<Home />} />
         <Route path="/tweets" element={<Tweets />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
