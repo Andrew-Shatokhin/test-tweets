@@ -20,7 +20,10 @@ position: relative;
     #4b2a99 78.99%
   );
   border-radius: 20px;
-  box-shadow: -2.58px 6.87px 20.62px 0px rgba(0, 0, 0, 0.23);
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+:hover {
+  transform: scale(1.05);
 `;
 export const LogoImage = styled(Logo)`
   margin-top: 20px;
@@ -84,7 +87,7 @@ export const Button = styled.button`
   background-color: #ebd8ff;
   box-shadow: 0px 3.44px 3.44px rgba(0, 0, 0, 0.25);
   border-radius: 10.31px;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 600;
   font-size: 18px;
   line-height: 1.22;
@@ -92,8 +95,5 @@ export const Button = styled.button`
   vertical-align: top;
   color: #373737;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    scale: 1.1;
-  }
+ 
 `;

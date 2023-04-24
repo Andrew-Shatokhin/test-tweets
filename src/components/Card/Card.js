@@ -17,11 +17,12 @@ import {
 // "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/68.jpg";
 
 export default function Card({ users }) {
-  const [isFollowing, setIsFollowing] = useState(users.following);
-  const { avatar, followers, tweets} = users;
 
+  const { avatar, followers, tweets, following } = users;
+const [isFollowing, setIsFollowing] = useState(following);
   // console.log(users)
-  const toggleActiveFollow = async () => {
+  const toggleActiveFollow = () => {
+    // e.preventDefault();
     if (!isFollowing) {
       users.followers += 1;
     } else {
@@ -32,7 +33,7 @@ export default function Card({ users }) {
     const id = users.id;
     const updateFollowing = !isFollowing;
 
-    await updateUsers(id, updateFollowing, followers).then(
+    updateUsers(id, updateFollowing, followers).then(
       setIsFollowing(!isFollowing)
     );
   };
@@ -51,7 +52,7 @@ export default function Card({ users }) {
         </Text>
         {!isFollowing ? (
           <Button
-            type="submit"
+            type="button"
             onClick={toggleActiveFollow}
             style={{ backgroundColor: '#EBD8FF' }}
           >
@@ -59,7 +60,7 @@ export default function Card({ users }) {
           </Button>
         ) : (
           <Button
-            type="submit"
+            type="button"
             onClick={toggleActiveFollow}
             style={{ backgroundColor: '#5CD3A8' }}
           >

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { TfiArrowLeft } from 'react-icons/tfi';
 import { fetchUsers } from '../../service/fetch';
 import {
+  BoxList,
   List,
   Button,
   GoBackButton,
@@ -20,7 +21,8 @@ export default function CardList() {
   // const [loading, setLoading] = useState(false);
   // console.log(users);
   const onLoadMoreBtn = () => {
-    setPage(page => page + 1);
+    // e.preventDefault();
+        setPage(page => page + 1);
     // setLoading(true);
   };
   const location = useLocation();
@@ -29,6 +31,8 @@ export default function CardList() {
     // if (users.length < 2) {
     //   setLoadMoreBtnShown(false);
     // }
+
+
     (async () => {
       try {
         const data = await fetchUsers(page);
@@ -77,7 +81,7 @@ export default function CardList() {
 
 
   return (
-    <div>
+    <BoxList>
       <LinkButton to={backLinkLocationRef.current}>
         <GoBackButton type="button">
           <TfiArrowLeft></TfiArrowLeft>
@@ -93,7 +97,7 @@ export default function CardList() {
       <Button type="button" onClick={onLoadMoreBtn}>
         Load more
       </Button>
-    </div>
+    </BoxList>
   );
 }
 // && !loading && loadMoreBtnShown &&
