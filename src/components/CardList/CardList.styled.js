@@ -13,9 +13,9 @@ export const LinkButton = styled(NavLink)`;
 export const List = styled.ul`
 list-style: none;
 padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
 justify-content: center;
 
 `;
@@ -33,7 +33,6 @@ font-weight: 600;
 font-size: 18px;
 line-height: 1.22;
 text-align: center;
-vertical-align: top;
 color: #EBD8FF;
 background-color:#5736A3;
 justify-content:center;
@@ -57,12 +56,10 @@ cursor: pointer;
 border: none;
 box-shadow: 0px 3.44px 3.44px rgba(0, 0, 0, 0.25);
 border-radius: 10.31px;
-
 font-weight: 600;
 font-size: 18px;
 line-height: 1.22;
 text-align: center;
-vertical-align: top;
 color: #EBD8FF;
 background-color:#5736A3;
 justify-content:center;

@@ -1,11 +1,7 @@
 import React from 'react';
 import { StyledLink } from './Layout';
 
-
-
 const Navigation = () => {
-
-
   return (
     <nav>
       <StyledLink to="/" end>

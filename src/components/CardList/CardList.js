@@ -11,34 +11,25 @@ import {
   LinkButton,
   Span
 } from '../CardList/CardList.styled';
-// console.log(fetchUsers());
+
 
 
 export default function CardList() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
-  // const [loadMoreBtnShown, setLoadMoreBtnShown] = useState(true);
-  // const [loading, setLoading] = useState(false);
-  // console.log(users);
+
   const onLoadMoreBtn = () => {
-    // e.preventDefault();
-        setPage(page => page + 1);
-    // setLoading(true);
-  };
+    setPage(page => page + 1);
+      };
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/');
   useEffect(() => {
-    // if (users.length < 2) {
-    //   setLoadMoreBtnShown(false);
-    // }
-
-
     (async () => {
       try {
         const data = await fetchUsers(page);
-        // console.log(data)
+
         if (data.length === 0) {
-          // setLoading(false);
+
           return alert('No results');
         }
 
@@ -46,39 +37,11 @@ export default function CardList() {
           setUsers(data);
         } else {
           setUsers(prevstate => [...prevstate, ...data]);
-          // setLoading(false);
+
         }
       } catch (error) {}
     })();
   }, [page]);
-
-// useEffect(() => {
-
-//   fetchUsers(page).then(data => {
-//     // console.log(data)
-//     if (data.length === 0) {
-//       // setLoading(false);
-//       return alert('No results');
-//     }
-
-
-//     if (page === 1) {
-//       setUsers(data);
-//     } else {
-//       setUsers(prevstate => [...prevstate, ...data]);
-//       // setLoading(false);
-//     }
-//     // if (users.length < 3) {
-//     //   setLoadMoreBtnShown(false);
-//     // }
-//   }).catch(error => {
-//     console.log(error);
-//   });
-//   }, [page]);
-
-
-
-
 
   return (
     <BoxList>
@@ -100,4 +63,4 @@ export default function CardList() {
     </BoxList>
   );
 }
-// && !loading && loadMoreBtnShown &&
+

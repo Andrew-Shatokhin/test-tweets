@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
 export const Layout = styled.div`
   height: 100vh;
   padding-top: 20px;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   font-size: 40px;

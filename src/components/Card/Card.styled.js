@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../../images/Logo.svg';
 
-export const Box = styled.div`
 
-`;
 export const List = styled.ul`
   list-style: none;
   margin: 0;
@@ -33,12 +31,9 @@ export const LogoImage = styled(Logo)`
 
 export const Image = styled.img`
   position: absolute;
-
   top: 28px;
   left: 36px;
-  /* width: 308px;
-  height: 168px; */
-  display: block;
+   display: block;
 `;
 
 export const RectangleImg = styled.img`
@@ -95,5 +90,5 @@ export const Button = styled.button`
   vertical-align: top;
   color: #373737;
   cursor: pointer;
- 
+
 `;

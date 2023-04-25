@@ -13,16 +13,15 @@ import {
   Text,
   Button,
 } from './Card.styled';
-// const Imgsrc =
-// "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/68.jpg";
+
 
 export default function Card({ users }) {
 
   const { avatar, followers, tweets, following } = users;
 const [isFollowing, setIsFollowing] = useState(following);
-  // console.log(users)
+
   const toggleActiveFollow = () => {
-    // e.preventDefault();
+    
     if (!isFollowing) {
       users.followers += 1;
     } else {
