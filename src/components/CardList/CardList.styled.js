@@ -5,8 +5,9 @@ export const BoxList = styled.div`
   padding-bottom: 50px;
 `;
 
-export const LinkButton = styled(NavLink)`;
+export const LinkButton = styled(NavLink)`
   text-decoration: none;
+  margin: 20px 0 0 20px;
 `;
 
 
@@ -20,8 +21,7 @@ justify-content: center;
 
 `;
 export const GoBackButton = styled.button`
-display: block;
-margin: 20px 0 0 20px;
+display: inline-block;
 width:150px;
 height: 50px;
 cursor: pointer;
